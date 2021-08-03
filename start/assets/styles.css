@@ -1,0 +1,27 @@
+body {
+  background-image: url('https://images.pexels.com/photos/385997/pexels-photo-385997.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.list-form-container {
+  text-align: center;
+  margin-top: 20px;
+  background: rgba(233, 225, 225, 0.938);
+  border: 1px solid #bebebe;
+  width: 50%;
+  border-radius: 4px;
+}
+
+.list-header,
+.input-form,
+.list-input {
+  margin-bottom: 10px;
+}
+
+.list-items {
+  list-style-position: inside;
+  padding-bottom: 20px;
+  text-align: left;
+}
