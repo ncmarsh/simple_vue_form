@@ -20,7 +20,8 @@
             <label for='itemInput' class='form-label'>Add an item</label>
             <!-- v-model is two-way data binding -->
             <input v-model='newItem' type='text' class='list-input form-control' placeholder='Add an item' id='itemInput' />
-            <div class='form-check form-switch list-input'>
+            <label for='switchPanel'>Select a category</label>
+            <div class='form-check form-switch list-input' id='switchPanel'>
               <label class='form-check-label' for='itemTypeSwitch'>
                 <!-- v-if -->
                 <span v-if='isActive'>Toiletries</span>
@@ -29,25 +30,25 @@
               </label>
             </div>
             <!-- v-bind shorthand - uses class binding to bind the disabled attribute with the disabled button class in Bootstrap -->
-            <button class='button' :disabled='!newItem' type='submit'>Submit</button>
+            <button type='submit' :disabled='!newItem' class="btn btn-dark">Submit</button>
           </form>
         </div>
+      </div>
+      <hr class='dotted' />
+      <div class='row'>
+        <div class='col-sm-12 col-md-12 col-lg-6'>
+          <h3>{{ columnOne }}</h3>
+          <ul class='list-items list-group'>
+            <!-- v-for directive -->
+            <li v-for='(item, index) in clothesList' :key='index' class='list-group-item list-group-item-action'>{{ item }}</li>
+          </ul>
         </div>
-        <div class='row'>
-          <div class='col-sm-12 col-md-4 col-lg-3 offset-md-2'>
-            <h3>{{ columnOne }}</h3>
-            <ul class='list-items list-group'>
-              <!-- v-for directive -->
-              <li v-for='(item, index) in clothesList' :key='index'>{{ item }}</li>
-            </ul>
-          </div>
-          <div class='col-sm-12 col-md-4 col-lg-3 offset-md-2'>
-            <h3>{{ columnTwo }}</h3>
-            <ul class='list-items list-group'>
-              <!-- v-for directive -->
-              <li v-for='(item, index) in toiletriesList' :key='index'>{{ item }}</li>
-            </ul>
-          </div>
+        <div class='col-sm-12 col-md-12 col-lg-6'>
+          <h3>{{ columnTwo }}</h3>
+          <ul class='list-items list-group'>
+            <!-- v-for directive -->
+            <li v-for='(item, index) in toiletriesList' :key='index' class='list-group-item list-group-item-action'>{{ item }}</li>
+          </ul>
         </div>
       </div>
     </div>
